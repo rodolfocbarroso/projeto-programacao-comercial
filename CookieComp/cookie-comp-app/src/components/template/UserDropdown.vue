@@ -9,42 +9,46 @@
       </v-btn>
     </template>
 
-    <v-card width="230px">
-      <v-list>
-        <v-list-item>
-          <v-list-item-avatar>
-            <v-avatar size="36px">
-              <Gravatar :email="user.email" alt="User" />
-            </v-avatar>
-          </v-list-item-avatar>
-          <v-list-item-content>
-            <v-list-item-title>
-              {{ user.name }}
-            </v-list-item-title>
-            <v-list-item-subtitle>
-              {{ user.email }}
-            </v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
+    <div class="user-card">
+      <v-card width="230px">
+        <v-list>
+          <v-list-item>
+            <v-list-item-avatar>
+              <v-avatar size="36px">
+                <Gravatar :email="user.email" alt="User" />
+              </v-avatar>
+            </v-list-item-avatar>
+            <v-list-item-content>
+              <v-list-item-title>
+                {{ user.name }}
+              </v-list-item-title>
+              <v-list-item-subtitle>
+                {{ user.email }}
+              </v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
 
-      <v-divider></v-divider>
+        <v-divider></v-divider>
 
-      <v-list>
-        <v-list-item>
-          <v-btn width="200px" large depressed text>
-            <v-icon>mdi-cogs</v-icon>
-            Administração
-          </v-btn>
-        </v-list-item>
-        <v-list-item>
-          <v-btn width="200px" large depressed text>
-            <v-icon>mdi-exit-to-app</v-icon>
-            Sair
-          </v-btn>
-        </v-list-item>
-      </v-list>
-    </v-card>
+        <v-list>
+          <router-link to="/admin">
+            <v-list-item>
+              <v-btn width="200px" large depressed text>
+                <v-icon>mdi-cogs</v-icon>
+                Administração
+              </v-btn>
+            </v-list-item>
+          </router-link>
+          <v-list-item>
+            <v-btn width="200px" large depressed text>
+              <v-icon>mdi-exit-to-app</v-icon>
+              Sair
+            </v-btn>
+          </v-list-item>
+        </v-list>
+      </v-card>
+    </div>
   </v-menu>
 </template>
 
@@ -60,4 +64,7 @@ export default {
 </script>
 
 <style>
+.user-card a {
+  text-decoration: none;
+}
 </style>
