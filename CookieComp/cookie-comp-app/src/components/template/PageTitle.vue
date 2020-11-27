@@ -1,9 +1,13 @@
 <template>
   <div class="page-title">
-    <h1>
-      <v-icon v-if="icon">{{ icon }}</v-icon> {{ main }}
-    </h1>
-    <h2>{{ sub }}</h2>
+    <v-container>
+      <h3>
+        <v-icon size="35px" v-if="icon">{{ icon }}</v-icon>
+        {{ main }}
+      </h3>
+      <h4>{{ sub }}</h4>
+    </v-container>
+
     <v-divider></v-divider>
   </div>
 </template>
@@ -16,11 +20,17 @@ export default {
 </script>
 
 <style>
-.page-title h1 {
+
+.page-title h3{
+  color: #3b3b3b;
   margin: 0px;
+  font-size: 1.72rem;
+  
 }
-.page-title h2 {
-  margin-top: 5px;
-  font-size: 1.3rem;
+
+.page-title h4{
+  color: #777;
+  margin-top: 2px;
+  font-size: 1.2rem;
 }
 </style>
