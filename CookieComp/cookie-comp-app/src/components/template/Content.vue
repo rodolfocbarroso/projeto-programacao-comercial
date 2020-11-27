@@ -1,11 +1,15 @@
 <template>
-  <div></div>
+  <v-main>
+    <v-container fluid>
+      <router-view> </router-view>
+    </v-container>
+  </v-main>
 </template>
 
 <script>
 export default {
-    name: 'Content'
-}
+  name: 'Content',
+};
 </script>
 
 <style>
