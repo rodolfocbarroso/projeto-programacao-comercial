@@ -1,6 +1,10 @@
 <template>
   <div class="admin-pages">
-      <PageTitle icon="mdi-cogs" main="Gerenciador" sub="Administração do Sistema">
+    <PageTitle
+      icon="mdi-cogs"
+      main="Gerenciador"
+      sub="Administração do Sistema"
+    />
   </div>
 </template>
 
@@ -8,8 +12,8 @@
 import PageTitle from "../template/PageTitle.vue";
 
 export default {
-    name: 'AdminPages',
-    components: { PageTitle },
+  name: "AdminPages",
+  components: { PageTitle },
 };
 </script>
 
