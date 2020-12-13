@@ -22,6 +22,8 @@ class CategoriaViewSet(ModelViewSet):
 class ArtigoViewSet(ModelViewSet):
 
     serializer_class = ArtigoSerializer
+    filterset_fields = ['categoria', 'usuario']
 
     def get_queryset(self):
         return Artigo.objects.filter(aprovado=True).order_by('data')
+
