@@ -1,4 +1,6 @@
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.filters import SearchFilter
+from rest_framework.permissions import IsAuthenticated, DjangoModelPermissions
 from rest_framework.viewsets import ModelViewSet
 from core.models import Categoria
 from .serializers import CategoriaSerializer
@@ -24,6 +26,9 @@ class ArtigoViewSet(ModelViewSet):
 
     serializer_class = ArtigoSerializer
     filter_backends = [SearchFilter]
+    permission_classes = [DjangoModelPermissions]
+    authentication_classes = [TokenAuthentication]
+
     search_fields = ['nome', 'descricao', '=usuario__username']
 
     def get_queryset(self):
