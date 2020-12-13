@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from comentarios.models import Comentario
 
 
 class Categoria(models.Model):
@@ -20,6 +21,7 @@ class Artigo(models.Model):
     data = models.DateTimeField(auto_now_add=True)
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    comentarios = models.ManyToManyField(Comentario)
     aprovado = models.BooleanField(default=False)
 
     def __str__(self):
