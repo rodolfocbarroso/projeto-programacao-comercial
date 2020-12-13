@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from rest_framework import routers
+from rest_framework.authtoken.views import obtain_auth_token
 from core.api.viewsets import CategoriaViewSet
 from core.api.viewsets import ArtigoViewSet
 from comentarios.api.viewsets import ComentarioViewSet
@@ -33,4 +34,6 @@ urlpatterns = [
 
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
+    path('api-token-auth/', obtain_auth_token),
+
 ]
