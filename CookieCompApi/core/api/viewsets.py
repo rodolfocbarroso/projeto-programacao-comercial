@@ -24,7 +24,7 @@ class ArtigoViewSet(ModelViewSet):
 
     serializer_class = ArtigoSerializer
     filter_backends = [SearchFilter]
-    search_fields = ['nome', 'descricao']
+    search_fields = ['nome', 'descricao', '=usuario__username']
 
     def get_queryset(self):
         return Artigo.objects.filter(aprovado=True).order_by('data')
