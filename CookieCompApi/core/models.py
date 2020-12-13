@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 from comentarios.models import Comentario
+from avaliacoes.models import Avaliacao
 
 
 class Categoria(models.Model):
@@ -22,6 +23,7 @@ class Artigo(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     comentarios = models.ManyToManyField(Comentario)
+    avaliacoes = models.ManyToManyField(Avaliacao)
     aprovado = models.BooleanField(default=False)
 
     def __str__(self):
