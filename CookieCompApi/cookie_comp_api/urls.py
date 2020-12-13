@@ -19,12 +19,16 @@ from django.urls import include
 from rest_framework import routers
 from core.api.viewsets import CategoriaViewSet
 from core.api.viewsets import ArtigoViewSet
+from comentarios.api.viewsets import ComentarioViewSet
 
 router = routers.DefaultRouter()
 router.register(r'categorias', CategoriaViewSet)
 router.register(r'artigos', ArtigoViewSet)
+router.register(r'comentarios', ComentarioViewSet)
+
 
 urlpatterns = [
+
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
 ]
