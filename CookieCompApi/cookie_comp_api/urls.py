@@ -23,7 +23,7 @@ from comentarios.api.viewsets import ComentarioViewSet
 from avaliacoes.api.viewsets import AvaliacaoViewSet
 
 router = routers.DefaultRouter()
-router.register(r'categorias', CategoriaViewSet)
+router.register(r'categorias', CategoriaViewSet, basename='Categoria')
 router.register(r'artigos', ArtigoViewSet, basename='Artigo')
 router.register(r'comentarios', ComentarioViewSet)
 router.register(r'avaliacoes', AvaliacaoViewSet)

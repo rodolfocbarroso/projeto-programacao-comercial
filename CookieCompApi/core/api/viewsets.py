@@ -7,8 +7,10 @@ from .serializers import ArtigoSerializer
 
 class CategoriaViewSet(ModelViewSet):
 
-    queryset = Categoria.objects.all().order_by('nome')
     serializer_class = CategoriaSerializer
+
+    def get_queryset(self):
+        return Categoria.objects.filter(ativa=True).order_by('nome')
 
 
 class ArtigoViewSet(ModelViewSet):
