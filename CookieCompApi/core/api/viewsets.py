@@ -11,6 +11,8 @@ from .serializers import ArtigoSerializer
 class CategoriaViewSet(ModelViewSet):
 
     serializer_class = CategoriaSerializer
+    permission_classes = [DjangoModelPermissions]
+    authentication_classes = [TokenAuthentication]
 
     def get_queryset(self):
         nome = self.request.query_params.get('nome', None)
