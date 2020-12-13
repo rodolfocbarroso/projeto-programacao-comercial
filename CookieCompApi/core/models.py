@@ -7,7 +7,7 @@ from avaliacoes.models import Avaliacao
 class Categoria(models.Model):
     nome = models.CharField(max_length=100)
     descricao = models.TextField()
-    categoriaPai = models.ForeignKey('self', unique=False, null=True, on_delete=models.SET_NULL, related_name="filhoCategoria")
+    categoriaPai = models.ForeignKey('self', unique=False, null=True, blank=True, on_delete=models.SET_NULL, related_name="filhoCategoria")
     ativa = models.BooleanField(default=False)
 
     def __str__(self):
