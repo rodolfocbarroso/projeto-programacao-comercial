@@ -20,11 +20,13 @@ from rest_framework import routers
 from core.api.viewsets import CategoriaViewSet
 from core.api.viewsets import ArtigoViewSet
 from comentarios.api.viewsets import ComentarioViewSet
+from avaliacoes.api.viewsets import AvaliacaoViewSet
 
 router = routers.DefaultRouter()
 router.register(r'categorias', CategoriaViewSet)
 router.register(r'artigos', ArtigoViewSet)
 router.register(r'comentarios', ComentarioViewSet)
+router.register(r'avaliacoes', AvaliacaoViewSet)
 
 
 urlpatterns = [
