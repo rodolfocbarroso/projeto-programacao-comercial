@@ -21,8 +21,8 @@ from core.api.viewsets import CategoriaViewSet
 from core.api.viewsets import ArtigoViewSet
 
 router = routers.DefaultRouter()
-router.register(r'categoria', CategoriaViewSet)
-router.register(r'artigo', ArtigoViewSet)
+router.register(r'categorias', CategoriaViewSet)
+router.register(r'artigos', ArtigoViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
