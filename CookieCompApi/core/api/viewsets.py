@@ -13,5 +13,7 @@ class CategoriaViewSet(ModelViewSet):
 
 class ArtigoViewSet(ModelViewSet):
 
-    queryset = Artigo.objects.all().order_by('data')
     serializer_class = ArtigoSerializer
+
+    def get_queryset(self):
+        return Artigo.objects.filter(aprovado=True).order_by('data')
