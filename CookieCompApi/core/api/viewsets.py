@@ -23,7 +23,6 @@ class CategoriaViewSet(ModelViewSet):
 class ArtigoViewSet(ModelViewSet):
 
     serializer_class = ArtigoSerializer
-    filterset_fields = ['categoria', 'usuario']
     filter_backends = [SearchFilter]
     search_fields = ['nome', 'descricao']
 
