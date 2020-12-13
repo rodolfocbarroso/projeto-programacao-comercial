@@ -10,7 +10,13 @@ class CategoriaViewSet(ModelViewSet):
     serializer_class = CategoriaSerializer
 
     def get_queryset(self):
-        return Categoria.objects.filter(ativa=True).order_by('nome')
+        nome = self.request.query_params.get('nome', None)
+        queryset = Categoria.objects.filter(ativa=True)
+
+        if nome:
+            queryset = queryset.filter(nome__icontains=nome)
+
+        return queryset.order_by('nome')
 
 
 class ArtigoViewSet(ModelViewSet):
