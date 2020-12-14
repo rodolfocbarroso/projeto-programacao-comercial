@@ -8,6 +8,9 @@ import router from './config/router'
 
 Vue.config.productionTip = false
 
+//TEMPORARIO!
+require('axios').defaults.headers.common['Authorization'] = 'Token f25070b0926a7eca8bc3963deed9c984a4b51269'
+
 window.app = new Vue({
   store,
   router,
