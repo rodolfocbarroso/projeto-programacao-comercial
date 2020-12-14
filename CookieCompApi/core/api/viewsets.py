@@ -34,5 +34,11 @@ class ArtigoViewSet(ModelViewSet):
     search_fields = ['nome', 'descricao', '=usuario__username']
 
     def get_queryset(self):
-        return Artigo.objects.filter(aprovado=True).order_by('data')
+        categoria = self.request.query_params.get('categoria', None)
+        queryset = Artigo.objects.filter(aprovado=True)
+
+        if categoria:
+            queryset = queryset.filter(categoria=categoria)
+
+        return queryset.order_by('data')
 
