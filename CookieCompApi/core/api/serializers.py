@@ -13,5 +13,4 @@ class ArtigoSerializer(ModelSerializer):
     class Meta:
         model = Artigo
         fields = ('id', 'nome', 'descricao', 'imagemUrl',
-                  'conteudo', 'data', 'usuario', 'categoria',
-                  'comentarios', 'avaliacoes', 'aprovado')
+                  'conteudo', 'data', 'usuario', 'categoria', 'aprovado')
