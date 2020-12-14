@@ -1,4 +1,5 @@
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.filters import SearchFilter
 from avaliacoes.models import Avaliacao
 from .serializers import AvaliacaoSerializer
 
@@ -7,3 +8,6 @@ class AvaliacaoViewSet(ModelViewSet):
 
     queryset = Avaliacao.objects.all().order_by('data')
     serializer_class = AvaliacaoSerializer
+    filter_backends = [SearchFilter]
+
+    search_fields = ['=usuario__username']
