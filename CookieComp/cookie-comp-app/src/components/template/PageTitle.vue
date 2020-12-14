@@ -1,6 +1,6 @@
 <template>
   <div class="page-title">
-    <v-container>
+    <v-container class="page-title-container">
       <h3>
         <v-icon size="35px" v-if="icon">{{ icon }}</v-icon>
         {{ main }}
@@ -20,7 +20,13 @@ export default {
 </script>
 
 <style>
+.page-title-container {
+  margin-left: 0px;
+}
+.page-title{
+  margin-bottom: 10px;
 
+}
 .page-title h3{
   color: #3b3b3b;
   margin: 0px;
