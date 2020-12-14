@@ -21,7 +21,7 @@ export default {
 
 <style>
 .page-title-container {
-  margin-left: 0px;
+  margin-left: 9px;
 }
 .page-title{
   margin-bottom: 10px;

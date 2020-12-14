@@ -22,6 +22,7 @@ export default {
         flex: 1;
         display: flex;
         border-radius: 8px;
+        margin-left: 20px;
         margin-right: 20px;
         margin-bottom: 20px;
         background-color: #FFF;
