@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from core.models import Artigo
 
 
 class Avaliacao(models.Model):
@@ -7,6 +8,7 @@ class Avaliacao(models.Model):
     comentario = models.TextField(null=True, blank=True)
     nota = models.DecimalField(max_digits=3, decimal_places=2)
     data = models.DateTimeField(auto_now_add=True)
+    artigo = models.ForeignKey(Artigo, on_delete=models.CASCADE, default="")
 
     def __str__(self):
         return self.usuario.username
