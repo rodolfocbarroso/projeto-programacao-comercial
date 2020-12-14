@@ -1,7 +1,5 @@
 from django.contrib.auth.models import User
 from django.db import models
-from comentarios.models import Comentario
-from avaliacoes.models import Avaliacao
 
 
 class Categoria(models.Model):
