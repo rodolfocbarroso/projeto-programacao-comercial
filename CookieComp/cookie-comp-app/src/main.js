@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 
 import vuetify from './plugins/vuetify'
-
+import './config/msgs'
 import store from './config/store'
 import router from './config/router'
 
